@@ -1,0 +1,18 @@
+    //public class CoffeeMachine
+
+    static int water = 200;
+    static int milk = 50;
+    static int coffeeBeans = 15;
+
+    // main
+    System.out.println("Write how many cups of coffee you will need:");
+    int beans = scanner.nextInt();
+    calculatingIngredient(beans);
+
+   //funkcija
+    public static void calculatingIngredient (int beans){
+        System.out.println("For" + beans +  " cups of coffee you will need:\n" +
+                beans * 200 +  " ml of water\n" +
+                beans * 50  +  " ml of milk\n" +
+                beans * 15  +  " g of coffee beans");
+    }

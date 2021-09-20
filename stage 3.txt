@@ -1,0 +1,29 @@
+System.out.println("Write how many ml of water the coffee machine has: ");
+        int mlOfWater = scanner.nextInt();
+        System.out.println("Write how many ml of milk the coffee machine has: ");
+        int mlOfMilk = scanner.nextInt();
+        System.out.println("Write how many grams of coffee beans the coffee machine has: ");
+        int gOfCoffee = scanner.nextInt();
+        System.out.println("Write how many cups of coffee you will need: ");
+        int numOfCups = scanner.nextInt();
+        calculateNumberOfServing(mlOfWater, mlOfMilk, gOfCoffee, numOfCups);
+
+    public static void calculateNumberOfServing(int water, int milk, int coffee, int cups) {
+        int[] ingredients = new int[3];
+
+        ingredients[0] = water / 200;;
+        ingredients[1] = milk / 50;
+        ingredients[2] = coffee / 15;
+
+        Arrays.sort(ingredients);
+
+        if (ingredients[0] == cups) {
+            System.out.println("Yes, I can make that amount of coffee");
+        }
+        if (ingredients[0] > cups) {
+            System.out.println("Yes, I can make that amount of coffee " + "(and even " + (ingredients[0] - cups) + " more than that)");
+        }
+        if (ingredients[0] < cups) {
+            System.out.println("No, I can make only " + ingredients[0] + " cup(s) of coffee");
+        }
+    }
